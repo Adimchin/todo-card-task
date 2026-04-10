@@ -12,16 +12,19 @@
   <body>
     <main>
       <article data-testid="test-todo-card" class="test-todo-card">
-        <section class="to-do-header">
-          <div>
-            <input
-              type="checkbox"
-              data-testid="test-todo-complete-toggle"
-              aria-label="change-status"
-              class="test-todo-complete-toggle"
-              style="cursor: pointer"
-            />
+         <div class="todo-complete">
+            <label>
+              <input
+                type="checkbox"
+                data-testid="test-todo-complete-toggle"
+                aria-label="change-status"
+                class="test-todo-complete-toggle"
+                style="cursor: pointer"
+              />
+              complete task
+            </label>
           </div>
+        <section class="to-do-header">
           <h2 data-testid="test-todo-title" class="test-todo-title">
             Refine Design System Documentation
           </h2>
@@ -110,6 +113,10 @@
             <span>IN PROGRESS</span>
           </p>
         </div>
+        <ul class="test-todo-tags">
+          <li>Work</li>
+          <li>urgent</li>
+        </ul>
         <section class="date-section">
           <div class="due-date-container">
             <svg
