@@ -1,0 +1,157 @@
+<!doctype html>
+<html>
+  <head>
+    <!--Meta data-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="a fully functional todo card component" />
+    <title>todo-card</title>
+
+    <!--styles-->
+    <link rel="stylesheet" href="todo-card.css" />
+  </head>
+  <body>
+    <main>
+      <article data-testid="test-todo-card" class="test-todo-card">
+        <section class="to-do-header">
+          <div>
+            <input
+              type="checkbox"
+              data-testid="test-todo-complete-toggle"
+              aria-label="change-status"
+              class="test-todo-complete-toggle"
+              style="cursor: pointer"
+            />
+          </div>
+          <h2 data-testid="test-todo-title" class="test-todo-title">
+            Refine Design System Documentation
+          </h2>
+          <div class="tasks-btns">
+            <button
+              data-testid="test-todo-edit-button"
+              class="test-todo-edit-button"
+              aria-label="edit task"
+              tabindex="{0}"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="17"
+                height="17"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                class="lucide lucide-pencil-icon lucide-pencil"
+              >
+                <path
+                  d="M21.174 6.812a1 1 0 0 0-3.986-3.987L3.842 16.174a2 2 0 0 0-.5.83l-1.321 4.352a.5.5 0 0 0 .623.622l4.353-1.32a2 2 0 0 0 .83-.497z"
+                />
+                <path d="m15 5 4 4" />
+              </svg>
+            </button>
+            <button
+              data-testid="test-todo-delete-button"
+              class="test-todo-delete-button"
+              aria-label="delete-task"
+              tabindex="{0}"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="17"
+                height="17"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                class="lucide lucide-trash2-icon lucide-trash-2"
+              >
+                <path d="M10 11v6" />
+                <path d="M14 11v6" />
+                <path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6" />
+                <path d="M3 6h18" />
+                <path d="M8 6V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2" />
+              </svg>
+            </button>
+          </div>
+        </section>
+        <p data-testid="test-todo-description" class="test-todo-description">
+          Review and update the component library documentation to ensure all
+          tokens match the new Linear-inspired theme.
+        </p>
+        <div class="todo-tags">
+          <p data-testid="test-todo-priority" class="test-todo-priority">
+            HIGH
+          </p>
+          <p data-testid="test-todo-status" class="test-todo-status">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="15"
+              height="15"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              class="lucide lucide-loader-icon lucide-loader"
+            >
+              <path d="M12 2v4" />
+              <path d="m16.2 7.8 2.9-2.9" />
+              <path d="M18 12h4" />
+              <path d="m16.2 16.2 2.9 2.9" />
+              <path d="M12 18v4" />
+              <path d="m4.9 19.1 2.9-2.9" />
+              <path d="M2 12h4" />
+              <path d="m4.9 4.9 2.9 2.9" />
+            </svg>
+            <span>IN PROGRESS</span>
+          </p>
+        </div>
+        <section class="date-section">
+          <div class="due-date-container">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="20"
+              height="20"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              class="lucide lucide-calendar-days-icon lucide-calendar-days"
+            >
+              <path d="M8 2v4" />
+              <path d="M16 2v4" />
+              <rect width="18" height="18" x="3" y="4" rx="2" />
+              <path d="M3 10h18" />
+              <path d="M8 14h.01" />
+              <path d="M12 14h.01" />
+              <path d="M16 14h.01" />
+              <path d="M8 18h.01" />
+              <path d="M12 18h.01" />
+              <path d="M16 18h.01" />
+            </svg>
+            <time data-testid="test-todo-due-date" class="test-todo-due-date">
+              Due, 12 Feb 2025
+            </time>
+          </div>
+          <div>
+            <time
+              data-testid="test-todo-time-remaining"
+              class="test-todo-time-remaining"
+            >
+              3 days left
+            </time>
+          </div>
+        </section>
+      </article>
+    </main>
+
+    <!--Scripts-->
+    <script src="todo-card.js"></script>
+  </body>
+</html>
