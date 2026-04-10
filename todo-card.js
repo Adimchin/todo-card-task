@@ -11,6 +11,7 @@ function displayRemainingDays(selectedDate) {
   //display days logic
   if (dateDifference > 0) {
     daysDisplay.innerHTML = `${days} days left`;
+    daysDisplay.style.color = "blue";
   } else if (dateDifference === 0) {
     daysDisplay.innerHTML = "Due today";
     daysDisplay.style.color = "red";
