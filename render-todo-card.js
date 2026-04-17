@@ -172,6 +172,7 @@ export function renderTodo() {
           <div>
             <p
               data-testid="test-todo-time-remaining"
+              data-testid="test-todo-overdue-indicator"
               class="test-todo-time-remaining"
               style="color:${remainingTimeIndicator}"
             >
