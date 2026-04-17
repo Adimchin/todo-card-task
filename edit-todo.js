@@ -4,7 +4,7 @@ import { displayDueDate } from "./time-date-logic.js";
 
 export function editTodo() {
   const todoEditcard = `
-<section>
+<article data-testid="test-todo-edit-form">
 <div class="edit-task-card">
 <div class="card-header">
 <h2 class="card-title">Edit Task</h2>
@@ -12,24 +12,24 @@ export function editTodo() {
 <form>
 <div class="form-group">
 <label>Task Title</label>
-<input class="input-text" placeholder="What needs to be done?" type="text" value="${todoData.title}"/>
+<input data-testid="test-todo-edit-title-input" aria-label="Task title" class="input-text" placeholder="What needs to be done?" type="text" value="${todoData.title}"/>
 </div>
 <div class="form-group">
 <label>Description</label>
-<textarea class="textarea-field" placeholder="Add more details about this task..." rows="4">${todoData.description}</textarea>
+<textarea data-testid="test-todo-edit-description-input" aria-label="Task description" class="textarea-field" placeholder="Add more details about this task..." rows="4">${todoData.description}</textarea>
 </div>
 <div class="metadata-grid">
 <div class="form-group">
 <label>Due Date</label>
 <div class="relative-container">
-<input class="input-date" type="date" value="${displayDueDate(todoData.dueDate)}"/>
+<input data-testid="test-todo-edit-due-date-input" class="input-date" type="date" aria-label="Due date" value="${displayDueDate(todoData.dueDate)}"/>
 </div>
 </div>
 <div class="form-group">
 <label>Priority</label>
 <div class="relative-container">
 <span class="material-symbols-outlined icon-overlay icon-priority">flag</span>
-<select class="select-field priority-select">
+<select class="select-field priority-select" data-testid="test-todo-edit-priority-select">
 <option ${todoData.priority === "Low" ? "selected" : ""}>Low</option>
 <option ${todoData.priority === "Medium" ? "selected" : ""}>Medium</option>
 <option ${todoData.priority === "High" ? "selected" : ""} >High</option>
@@ -40,7 +40,7 @@ export function editTodo() {
 <label>Status</label>
 <div class="relative-container">
 <span class="material-symbols-outlined icon-overlay icon-status">radio_button_partial</span>
-<select class="select-field status-select">
+<select class="select-field status-select" data-testid="test-todo-status-control">
 <option ${todoData.status === "Pending" ? "selected" : ""}>Pending</option>
 <option ${todoData.status === "In Progress" ? "selected" : ""} >In Progress</option>
 <option ${todoData.status === "Completed" ? "selected" : ""}>Completed</option>
@@ -49,12 +49,12 @@ export function editTodo() {
 </div>
 </div>
 <div class="footer-actions">
-<button class="btn btn-cancel" type="button">Cancel</button>
-<button class="btn btn-save" type="submit">Save Changes</button>
+<button class="btn btn-cancel" data-testid="test-todo-cancel-button" type="button">Cancel</button>
+<button class="btn btn-save" type="submit" data-testid="test-todo-save-button">Save Changes</button>
 </div>
 </form>
 </div>
-</section>
+</article>
 `;
 
   const root = document.querySelector(".root");
@@ -76,6 +76,7 @@ export function editTodo() {
     const taskPriority = document.querySelector(".priority-select").value;
     const taskStatus = document.querySelector(".status-select").value;
   
+  
     todoData.title = taskTitle;
     todoData.description = taskDescription;
     todoData.dueDate = taskDueDate;
@@ -87,6 +88,10 @@ export function editTodo() {
 
     // re-render the todo card with updated data
     renderTodo();
+    
+    // change indicator after tod card render
+    const indicator = document.querySelector(".priority-indicator");
+    indicator.className = `priority-indicator ${todoData.priority.toLowerCase()}`;
 
   });
 }

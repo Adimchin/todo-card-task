@@ -2,6 +2,7 @@ import { todoData } from "./todoData.js";
 import { displayDueDate, displayRemainingTime } from "./time-date-logic.js";
 import { editTodo } from "./edit-todo.js";
 import { checkStatus } from "./check-status.js";
+import { collapselogic } from "./collpaseLogic.js";
 
 // displaying the todo card
 export function renderTodo() {
@@ -89,13 +90,24 @@ export function renderTodo() {
             </button>
           </div>
         </section>
-        <p data-testid="test-todo-description" class="test-todo-description">
-          ${todoData.description}
-        </p>
+        <p data-testid="test-todo-description" data-testid="test-todo-collapsible-section" class="test-todo-description collapsed">
+          lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+          </p>
+          <button
+  data-testid="test-todo-expand-toggle""
+  class="expand-btn"
+  style="margin-bottom: 10px"
+>
+  Show more
+</button>
+
         <div class="todo-tags">
+        <div class="priority-container">
+        <div data-testid="test-todo-priority-indicator" class="priority-indicator high"></div>
           <p data-testid="test-todo-priority" class="test-todo-priority">
             ${todoData.priority}
           </p>
+        </div>
           <p data-testid="test-todo-status" class="test-todo-status">
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -181,6 +193,8 @@ export function renderTodo() {
     .addEventListener("click", () => {
       alert("task deleted");
     });
+      const btn = document.querySelector(".expand-btn")
+        btn.addEventListener("click", () => {collapselogic(btn)});
 
   checkStatus(todoData.status, remainingTime, dueDate);
 
