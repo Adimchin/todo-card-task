@@ -11,25 +11,25 @@ export function editTodo() {
 </div>
 <form>
 <div class="form-group">
-<label>Task Title</label>
-<input data-testid="test-todo-edit-title-input" aria-label="Task title" class="input-text" placeholder="What needs to be done?" type="text" value="${todoData.title}"/>
+<label for="title">Task Title</label>
+<input data-testid="test-todo-edit-title-input" aria-label="Task title" class="input-text" placeholder="What needs to be done?" type="text" value="${todoData.title}" id="title"/>
 </div>
 <div class="form-group">
-<label>Description</label>
-<textarea data-testid="test-todo-edit-description-input" aria-label="Task description" class="textarea-field" placeholder="Add more details about this task..." rows="4">${todoData.description}</textarea>
+<label for="description">Description</label>
+<textarea data-testid="test-todo-edit-description-input" aria-label="Task description" class="textarea-field" placeholder="Add more details about this task..." rows="4" id="description">${todoData.description}</textarea>
 </div>
 <div class="metadata-grid">
 <div class="form-group">
-<label>Due Date</label>
+<label for="dueDate">Due Date</label>
 <div class="relative-container">
-<input data-testid="test-todo-edit-due-date-input" class="input-date" type="date" aria-label="Due date" value="${displayDueDate(todoData.dueDate)}"/>
+<input data-testid="test-todo-edit-due-date-input" class="input-date" type="date" aria-label="Due date" value="${displayDueDate(todoData.dueDate)}" id="dueDate"/>
 </div>
 </div>
 <div class="form-group">
-<label>Priority</label>
+<label for="priority">Priority</label>
 <div class="relative-container">
 <span class="material-symbols-outlined icon-overlay icon-priority">flag</span>
-<select class="select-field priority-select" data-testid="test-todo-edit-priority-select">
+<select class="select-field priority-select" data-testid="test-todo-edit-priority-select" id="priority">
 <option ${todoData.priority === "Low" ? "selected" : ""}>Low</option>
 <option ${todoData.priority === "Medium" ? "selected" : ""}>Medium</option>
 <option ${todoData.priority === "High" ? "selected" : ""} >High</option>
@@ -37,10 +37,10 @@ export function editTodo() {
 </div>
 </div>
 <div class="form-group">
-<label>Status</label>
+<label for="status">Status</label>
 <div class="relative-container">
 <span class="material-symbols-outlined icon-overlay icon-status">radio_button_partial</span>
-<select class="select-field status-select" data-testid="test-todo-status-control">
+<select class="select-field status-select" data-testid="test-todo-status-control" id="status">
 <option ${todoData.status === "Pending" ? "selected" : ""}>Pending</option>
 <option ${todoData.status === "In Progress" ? "selected" : ""} >In Progress</option>
 <option ${todoData.status === "Completed" ? "selected" : ""}>Completed</option>

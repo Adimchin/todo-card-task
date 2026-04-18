@@ -94,11 +94,13 @@ console.log(todoData.status.toLowerCase().replace(" ", "-"));
           lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
           </p>
           <button
-  data-testid="test-todo-expand-toggle""
-  class="expand-btn"
-  style="margin-bottom: 10px"
->
-  Show more
+          aria-expanded="false"
+          aria-controls="test-todo-collapsible-section"
+          data-testid="test-todo-expand-toggle"
+          class="expand-btn"
+          style="margin-bottom: 10px"
+        >
+          Show more
 </button>
 
         <div class="todo-tags">
