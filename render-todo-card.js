@@ -3,6 +3,7 @@ import { displayDueDate, displayRemainingTime } from "./time-date-logic.js";
 import { editTodo } from "./edit-todo.js";
 import { checkStatus } from "./check-status.js";
 import { collapselogic } from "./collpaseLogic.js";
+import { upadateRemainingTime } from "./updateRemainingTime.js";
 
 // displaying the todo card
 export function renderTodo() {
@@ -172,14 +173,15 @@ console.log(todoData.status.toLowerCase().replace(" ", "-"));
             </time>
           </div>
           <div>
-            <p
+            <time
               data-testid="test-todo-time-remaining"
               data-testid="test-todo-overdue-indicator"
               class="test-todo-time-remaining"
+              aria-live="polite"
               style="color:${remainingTimeIndicator}"
             >
               ${remainingTime}
-            </p>
+            </time>
           </div>
         </section>
       </article>
@@ -229,3 +231,5 @@ console.log(todoData.status.toLowerCase().replace(" ", "-"));
   addStatusListener();
 }
 renderTodo();
+// update remaingTime
+setInterval(() => {upadateRemainingTime()} , 30000)
