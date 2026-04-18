@@ -109,7 +109,12 @@ main {
 .priority-indicator.low {
   background-color: green;
 }
-
+.test-todo-status {
+  color: white;
+  display: flex;
+  align-items: center;
+  column-gap: 5px;
+}
 .priority-indicator.medium {
   background-color: orange;
 }
@@ -117,11 +122,14 @@ main {
 .priority-indicator.high {
   background-color: red;
 }
-.test-todo-status {
-  background-color: rgba(0, 0, 0, 0.1);
-  display: flex;
-  align-items: center;
-  column-gap: 5px;
+.pending {
+   background-color: red;
+}
+.in-progress {
+   background-color: orange;
+}
+.completed {
+  background-color: green;
 }
 .date-section {
   margin: 20px 0px;

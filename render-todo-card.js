@@ -18,7 +18,7 @@ export function renderTodo() {
   } else {
     remainingTimeIndicator = "black";
   }
-
+console.log(todoData.status.toLowerCase().replace(" ", "-"));
   root.innerHTML = `
   <article data-testid="test-todo-card" class="test-todo-card">
          <div class="todo-complete">
@@ -108,7 +108,7 @@ export function renderTodo() {
             ${todoData.priority}
           </p>
         </div>
-          <p data-testid="test-todo-status" class="test-todo-status">
+          <p data-testid="test-todo-status" class="test-todo-status ${todoData.status.toLowerCase().replace(" ", "-")}">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="15"
