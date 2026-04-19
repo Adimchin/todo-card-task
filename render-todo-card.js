@@ -221,11 +221,13 @@ console.log(todoData.status.toLowerCase().replace(" ", "-"));
         status = false;
         todoData.status = "Pending";
         checkStatus(todoData.status, remainingTime, dueDate);
+        renderTodo();
         return;
       }
       status = true;
       todoData.status = "Completed";
       checkStatus(todoData.status, remainingTime, dueDate);
+      renderTodo();
     });
   }
   addStatusListener();
